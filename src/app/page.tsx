@@ -2,6 +2,8 @@
 
 import { SyntheticEvent, useEffect, useState } from 'react';
 
+import styles from './page.module.css';
+
 type Advocates = {
   id: number;
   firstName: string;
@@ -55,25 +57,24 @@ export default function Home() {
   };
 
   return (
-    <main className="m-6">
-      <h1>Solace Advocates</h1>
-      <br />
-      <br />
-      <div>
-        <p>Search</p>
+    <main className={styles.main}>
+      <h1 className={styles.h1}>Solace Advocates</h1>
+      <div className={styles.searchBar}>
+        <label htmlFor="advocateSearch">Advocate search</label>
+        <input
+          className={styles.input}
+          onChange={onChange}
+          value={searchTerm}
+          placeholder="Search..."
+          alt="Advocate search"
+          id="advocateSearch"
+        />
+        <button onClick={onClick}>Reset Search</button>
         <p>
           Searching for: <span id="search-term">{searchTerm}</span>
         </p>
-        <input
-          className="border border-black"
-          onChange={onChange}
-          value={searchTerm}
-        />
-        <button onClick={onClick}>Reset Search</button>
       </div>
-      <br />
-      <br />
-      <table>
+      <table className={styles.table}>
         <thead>
           <tr>
             <th>First Name</th>
@@ -94,9 +95,11 @@ export default function Home() {
                 <td>{advocate.city}</td>
                 <td>{advocate.degree}</td>
                 <td>
-                  {advocate.specialties.map((s) => (
-                    <div key={`${advocate.id}-${s}`}>{s}</div>
-                  ))}
+                  <ul>
+                    {advocate.specialties.map((s) => (
+                      <li key={`${advocate.id}-${s}`}>{s}</li>
+                    ))}
+                  </ul>
                 </td>
                 <td>{advocate.yearsOfExperience}</td>
                 <td>{advocate.phoneNumber}</td>

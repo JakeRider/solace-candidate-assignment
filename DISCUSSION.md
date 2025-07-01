@@ -1,0 +1,5 @@
+- Ideally fetching the list of advocates would be done on the server w/ Next, but I'm adhering to the assignment guidelines.
+- Search would also ideally be done on the backend, and failing that a proper search library (e.g. `fuse.js`) could be used. The current approach is fine for a demo.
+- Requests should be validated in the client using something like the zod. Many ways to skin a cat with that one.
+- Requests would also be better handled with tooling like `swr` or `react-query` for larger apps, but for a single query a plain fetch is fine.
+- Due to time constraints, styling is only for desktop. Obviously, production would need (arguably should focus on if your user stats are like most sites) mobile styling.

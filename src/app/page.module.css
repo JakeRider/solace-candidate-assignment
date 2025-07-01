@@ -1,0 +1,59 @@
+.main {
+  width: 100%;
+  max-width: 1024px;
+  margin: 1.5rem auto;
+
+  color: var(--main-font-color);
+}
+
+.h1 {
+  text-align: center;
+  font-weight: bold;
+  font-size: 2rem;
+
+  margin-bottom: 24px;
+}
+
+.searchBar {
+  margin-bottom: 16px;
+
+  & label {
+    display: block;
+  }
+
+  & input {
+    border: var(--black-border);
+    padding: 4px;
+    margin: 8px 0;
+  }
+
+  & button {
+    border: 1px solid var(--grey);
+    box-shadow: 2px 2px #ddd;
+    padding: 2px 6px;
+    margin-left: 8px;
+  }
+}
+
+.table {
+  border: var(--black-border);
+  width: 100%;
+
+  & thead {
+    background-color: var(--grey);
+  }
+
+  & tr:nth-child(even) {
+    background-color: var(--light-grey);
+  }
+
+  & th, & td {
+    border: var(--black-border);
+    padding: 4px;
+  }
+
+  & li {
+    list-style: square;
+    margin-left: 20px;
+  }
+}
